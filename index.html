@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>TWIST - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Mobile Menu Button -->
+    <div class="mobile-menu-btn" id="mobileMenuBtn">
+      <img class="invert" src="menu-svgrepo-com.svg" alt="Menu" class="invert" style="height: 20px;" />
+    </div>
+
+    <div class="container">
+      <div class="left-section border rounded m-1">
+        <div class="nav-header p-1">
+          <div class="logo">
+            <img src="logo.svg" alt="Spotify Logo" />
+            <span>TWIST</span>
+          </div>
+        </div>
+        <nav class="main-nav p-1">
+          <ul>
+            <li class="nav-item active">
+              <img src="home.svg" alt="Home" class="icon" />
+              <span>Home</span>
+            </li>
+            <li class="nav-item" id="searchBtn" style="cursor: pointer">
+              <img src="search.svg" alt="Search" class="icon" />
+              <span>Search</span>
+            </li>
+            <div class="search-bar bg-grey" id="searchBar" style="display: none">
+              <input type="text" placeholder="Search for song" />
+            </div>
+          </ul>
+        </nav>
+
+        <div class="library-section p-1">
+          <div class="library-header">
+            <img src="library-svgrepo-com.svg" alt="Library" class="invert" />
+            <h2>Your Library</h2>
+          </div>
+
+          <div class="songlists">
+            <ul id="songList">
+              <!-- Songs added dynamically -->
+            </ul>
+          </div>
+
+          <div style="padding: 10px;">
+            <button id="uploadBtn" style="color: white; background: none; border: none; cursor: pointer; font-size: 16px;">
+              <img class="invert" src="add-circle-svgrepo-com.svg" alt="add" style="height: 20px; margin-top: 5px;"> Add Your Own Songs
+            </button>
+            <input type="file" id="songUploader" accept=".mp3" style="display: none" multiple />
+          </div>
+
+          <div class="footer-links">
+            <a href="#">Legal</a>
+            <a href="#">Privacy</a>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-section border rounded m-1">
+        <div class="header">
+          <div class="nav-arrows hidden-mobile">
+            <img src="arrow-sm-left-svgrepo-com.svg" alt="Back" />
+            <img src="arrow-sm-right-svgrepo-com.svg" alt="Forward" />
+          </div>
+          <div class="user-actions">
+            <span class="hidden-mobile">Login</span>
+            <img src="login-svgrepo-com.svg" alt="Login" />
+          </div>
+        </div>
+
+        <div class="scrollable-content">
+          <div class="video">
+            <video id="ad1" src="Untitled design.mp4" controls loop autoplay muted></video>
+            <div class="ad">
+              <h2>Enjoy uninterrupted music</h2>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum,
+                iusto libero fugit dolor laborum reprehenderit.
+              </p>
+            </div>
+          </div>
+
+          <div class="twistPlaylist">
+            <h2>Twist Playlists</h2>
+            <div class="cardcontainer" id="cardContainer">
+              <!-- Cards dynamically added -->
+            </div>
+          </div>
+
+          <div class="playbar">
+            <div class="bar-top">
+              <!-- Controls -->
+              <div class="controls">
+                <div id="prevBtn" title="Previous">⏮</div>
+                <div id="backward5Btn" title="Backward 5s">
+                  <img class="invert" src="media-seek-backward-svgrepo-com.svg" alt="5 sec seek" style="height: 20px;">
+                </div>
+                <div id="playPauseBtn" title="Play/Pause">▶</div>
+                <div id="forward5Btn" title="Forward 5s">
+                  <img class="invert" src="media-seek-backward-svgrepo-com (1).svg" alt="5 sec seek" style="height: 20px;">
+                </div>
+                <div id="nextBtn" title="Next">⏭</div>
+              </div>
+          
+              <!-- Volume -->
+              <div class="volume-control">
+                <div id="volumeDownBtn" title="Volume Down">
+                  <img class="invert" src="volume-minus-svgrepo-com.svg" alt="volume down" style="height: 20px;">
+                </div>
+                <input type="range" id="volumeBar" min="0" max="1" step="0.01" value="1">
+                <div id="volumeUpBtn" title="Volume Up">
+                  <img class="invert" src="volume-plus-svgrepo-com.svg" alt="volume up" style="height: 20px;">
+                </div>
+              </div>
+            </div>
+          
+            <!-- Seek Bar Row -->
+            <div class="seek-bar-container">
+              <input type="range" id="seekBar" value="0" min="0" max="100" step="0.1">
+              <div class="time">
+                <span id="currentTime">00:00</span> / <span id="totalTime">00:00</span>
+              </div>
+            </div>
+          </div>          
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("searchBtn").addEventListener("click", function () {
+        const searchBar = document.getElementById("searchBar");
+        if (searchBar.style.display === "none" || searchBar.style.display === "") {
+          searchBar.style.display = "block";
+        } else {
+          searchBar.style.display = "none";
+        }
+      });
+
+      // Mobile menu toggle
+      document.getElementById("mobileMenuBtn").addEventListener("click", function() {
+        document.querySelector(".left-section").classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+      });
+
+      // Swipe functionality for mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      document.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, false);
+
+      document.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, false);
+
+      function handleSwipe() {
+        const leftSection = document.querySelector(".left-section");
+        // Swipe right to open menu (only from left edge)
+        if (touchStartX < 50 && touchEndX - touchStartX > 100) {
+          leftSection.classList.add("active");
+          document.body.classList.add("menu-open");
+        }
+        // Swipe left to close menu
+        else if (leftSection.classList.contains("active") && touchStartX - touchEndX > 100) {
+          leftSection.classList.remove("active");
+          document.body.classList.remove("menu-open");
+        }
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (e) => {
+        const leftSection = document.querySelector(".left-section");
+        if (leftSection.classList.contains("active") && 
+            !e.target.closest(".left-section") && 
+            !e.target.closest("#mobileMenuBtn")) {
+          leftSection.classList.remove("active");
+          document.body.classList.remove("menu-open");
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

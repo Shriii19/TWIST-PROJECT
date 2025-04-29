@@ -1,0 +1,537 @@
+/* Base Reset */
+html, body {
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 15px;
+  min-height: 100vh;
+  background-color: black;
+}
+
+/* Container Layout */
+.container {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 30px);
+}
+
+.left-section {
+  width: 20%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #121212 0%, #121212 80%, #0a0a0a 95%, #000000 100%);
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: black;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  color: white;
+  border: 2px solid lightgray;
+  outline: none;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border-radius: 25px;
+}
+
+.search-bar input::placeholder {
+  color: white;
+  opacity: 0.7;
+}
+
+.nav-header {
+  padding: 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: white;
+  margin-left: -8px;
+  margin-top: -6px;
+}
+
+.logo img {
+  width: 35px;
+  margin-right: 10px;
+}
+
+.main-nav ul {
+  list-style: none;
+}
+
+.main-nav li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 8px 10px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+}
+
+.library-section {
+  position: relative;
+  flex: 1;
+  padding: 5px;
+}
+
+.library-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  padding: 10px;
+}
+
+.footer-links {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 13px;
+  color: gray;
+}
+
+.footer-links a {
+  color: gray;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Right Section */
+.right-section {
+  position: relative;
+  width: 80%;
+  color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to top, #1f1f1f 0%, #181818 25%, #121212 50%, #0d0d0d 75%, #000000 100%);
+}
+
+/* Scrollable Content Area */
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-bottom: 100px;
+}
+
+.scrollable-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Video Section */
+.video {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  border-bottom: 1px solid #333;
+}
+
+.video video {
+  flex: 1;
+  max-width: 60%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.ad {
+  flex: 1;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.ad h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.ad p {
+  color: #aaa;
+  line-height: 1.5;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.nav-arrows {
+  display: flex;
+  gap: 15px;
+}
+
+.header img {
+  height: 30px;
+  filter: invert(1);
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-actions span {
+  color: white;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Playlist Section */
+.twistPlaylist {
+  margin: 15px;
+  position: relative;
+  padding: 0 20px;
+}
+
+.twistPlaylist h2 {
+  font-size: 22px;
+  margin: 20px 0;
+  padding-bottom: 10px;
+}
+
+.cardcontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 25px;
+  padding: 10px 30px 30px;
+}
+
+.card {
+  position: relative;
+  background: linear-gradient(to bottom, #1f1f1f, #121212);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 200px;
+  height: 250px;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  margin-top: 25px;
+  margin-left: 15px;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+/* Play Button */
+.play-btn {
+  background: rgb(252, 197, 57);
+  color: black;
+  border: none;
+  border-radius: 25px;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.card:hover .play-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* Playbar Styling */
+.playbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 15px 30px;
+  background: linear-gradient(to top, #000000 0%, #0a0a0a 20%, #121212 40%, rgba(18,18,18,0.8) 60%, rgba(18,18,18,0.5) 80%, rgba(18,18,18,0) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Aligned controls + volume row */
+.bar-top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  gap: 100px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.controls > div {
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  padding: 5px 10px;
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+.volume-control input {
+  width: 200px;
+}
+
+/* Seek Bar */
+.seek-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.seek-bar-container input {
+  width: 80%;
+  margin-top: 5px;
+}
+
+.seek-bar-container .time {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 80%;
+  font-size: 14px;
+  color: white;
+}
+
+/* Library Section Fixes */
+.library-section ul {
+  list-style: none;
+}
+
+.library-section li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  color: white;
+  padding: 5px 0;
+}
+
+.songlists ul li {
+  margin-left: 35px;
+  margin-top: 5px;
+}
+
+.library-section div {
+  margin-left: 0;
+}
+
+/* RESPONSIVE STYLES */
+@media screen and (max-width: 1024px) {
+  .left-section {
+    width: 30%;
+  }
+
+  .right-section {
+    width: 70%;
+  }
+
+  .volume-control input {
+    width: 120px;
+  }
+
+  .controls {
+    gap: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .container {
+    flex-direction: row;
+  }
+
+  .left-section {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: #121212;
+    z-index: 1000;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .left-section.active {
+    left: 0;
+  }
+
+  .right-section {
+    width: 100%;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  .video {
+    flex-direction: column;
+  }
+
+  .video video {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .ad {
+    padding: 10px 0;
+  }
+
+  .bar-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .volume-control {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .volume-control input {
+    width: 100%;
+  }
+
+  .cardcontainer {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .card {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin-left: 0;
+  }
+
+  .playbar {
+    padding: 10px;
+  }
+
+  .seek-bar-container input {
+    width: 100%;
+  }
+
+  .seek-bar-container .time {
+    font-size: 12px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 3px;
+  }
+}
+/* Hide mobile menu button on tablet and desktop */
+@media screen and (min-width: 769px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}

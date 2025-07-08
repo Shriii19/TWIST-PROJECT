@@ -24,6 +24,6 @@ TWIST is a modern, responsive web music player with rich features and clean desi
 
 ## 🛠️ Tech Stack
 
-- HTML5
-- CSS3 (Flexbox + Grid)
-- JavaScript (DOM, Audio API)
+- HTML
+- CSS
+- JavaScript

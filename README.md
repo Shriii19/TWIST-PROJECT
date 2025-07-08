@@ -2,6 +2,8 @@
 
 TWIST is a modern, responsive web music player with rich features and clean design, inspired by popular streaming platforms. Built with HTML, CSS, and JavaScript, this project allows users to enjoy audio playback and manage their personal music library directly in the browser.
 
+🚀 **[Live Demo Here](https://prathameshrsh26.github.io/TWIST-PROJECT/)**
+
 ## 🚀 Features
 
 - 🎧 Audio playback controls (play, pause, skip)

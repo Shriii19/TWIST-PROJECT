@@ -17,7 +17,8 @@ TWIST is a modern, responsive web music player with rich features and clean desi
 
 | Desktop View | Mobile View | Hamburger Menu |
 |--------------|-------------|----------------|
-| <img src="./screenshots/desktop.png" width="400"/> | <img src="./screenshots/mobile.png" width="250"/> | <img src="./screenshots/hamburger.png" width="250"/> |
+| <img src="./screenshots/desktop.png" width="400"/> | <img src="./screenshots/mobile.png" width="250"/> | <img src="https://github.com/user-attachments/assets/7723dddd-a3f1-4af8-8040-fbabc3d57bc5" width="250"/> |
+
 
 
 

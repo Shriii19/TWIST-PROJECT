@@ -17,7 +17,8 @@ TWIST is a modern, responsive web music player with rich features and clean desi
 
 | Desktop View | Mobile View |
 |--------------|-------------|
-| <img src="![Screenshot 2025-07-08 212729](https://github.com/user-attachments/assets/9ed2b247-e12f-4278-8e7f-49539f523782)" width="400"/> | <img src="![prathameshrsh26 github io_TWIST-PROJECT_(iPhone 14 Pro Max)](https://github.com/user-attachments/assets/015ea092-711a-4844-bedb-88ce6da3367b)" width="250"/> |
+| <img src="https://github.com/user-attachments/assets/9ed2b247-e12f-4278-8e7f-49539f523782" width="400"/> | <img src="https://github.com/user-attachments/assets/015ea092-711a-4844-bedb-88ce6da3367b" width="250"/> |
+
 
 
 ## 🛠️ Tech Stack
